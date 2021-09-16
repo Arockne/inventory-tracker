@@ -16,6 +16,7 @@ header h1 {
 nav {
   display: flex;
   justify-content: space-evenly;
+  text-align: center
 }
 
 /********* Home ************/
