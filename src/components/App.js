@@ -4,13 +4,7 @@ import NavBar from './NavBar'
 import Home from './Home'
 import InventoryPage from './InventoryPage'
 import NewItem from './NewItem'
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  NavLink
-} from "react-router-dom";
+import { Route } from "react-router-dom";
 
 
 function App() {
