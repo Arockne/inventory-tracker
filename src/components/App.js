@@ -15,7 +15,7 @@ function Header() {
   )
 }
 
-function Navbar() {
+function NavBar() {
   return (
     <nav>
       <button>Home</button>
@@ -91,7 +91,7 @@ function App() {
         */
       }
       <Header />
-      <Navbar />
+      <NavBar />
       <Home />
       <InventoryPage />
       <NewItem />
