@@ -5,7 +5,7 @@ function Item({ item }) {
   const { id, name, category, image } = item
   return (
     <Card>
-      <Image src={image}/>
+      <Image src={image} size="large" />
       <Card.Content>
         <Card.Header>{name}</Card.Header>
         <Card.Description>{`Category: ${category}`}</Card.Description>
