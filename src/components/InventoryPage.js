@@ -3,7 +3,7 @@ import Search from './Search'
 
 function InventoryPage() {
   return (
-    <div>
+    <div className='inventory-page'>
       <Search />
     </div>
   )
