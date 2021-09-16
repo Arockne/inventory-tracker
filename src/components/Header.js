@@ -2,9 +2,9 @@ import React from 'react'
 
 function Header() {
   return (
-    <div>
+    <header>
       <h1>Inventory Tracker<span>🍌🍇🥬</span></h1>
-    </div>
+    </header>
   )
 }
 
