@@ -1,12 +1,17 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
+const active = {
+  backgroundColor: 'black',
+  color: 'red'
+}
+
 function NavBar() {
   return (
     <nav>
-      <NavLink exact to="/">Home</NavLink>
-      <NavLink exact to="/inventory">Inventory</NavLink>
-      <NavLink exact to="/new">New</NavLink>
+      <NavLink exact to="/" activeStyle={active}>Home</NavLink>
+      <NavLink exact to="/inventory" activeStyle={active}>Inventory</NavLink>
+      <NavLink exact to="/new" activeStyle={active}>New</NavLink>
     </nav>
   )
 }
