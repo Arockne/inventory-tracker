@@ -28,8 +28,26 @@ function Navbar() {
 function Home() {
   return (
     <div>
-      <h2>Welcome to my inventory foood tracker</h2>
+      <h2>Welcome to my inventory food tracker</h2>
     </div>
+  )
+}
+
+function InventoryPage() {
+  return (
+    <div>
+      <Search />
+    </div>
+  )
+}
+
+
+function Search() {
+  return (
+    <form>
+     <input type="text" placeholder="Search By Name.."/>
+     <input type="submit" />
+    </form>
   )
 }
 
@@ -75,6 +93,7 @@ function App() {
       <Header />
       <Navbar />
       <Home />
+      <InventoryPage />
       <NewItem />
     </div>
   );
