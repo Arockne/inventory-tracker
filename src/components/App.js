@@ -25,6 +25,14 @@ function Navbar() {
   )
 }
 
+function Home() {
+  return (
+    <div>
+      <h2>Welcome to my inventory foood tracker</h2>
+    </div>
+  )
+}
+
 function App() {
   return (
     <div className="App">
@@ -38,6 +46,7 @@ function App() {
       }
       <Header />
       <Navbar />
+      <Home />
     </div>
   );
 }
