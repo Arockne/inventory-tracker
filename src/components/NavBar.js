@@ -3,8 +3,8 @@ import { NavLink } from 'react-router-dom'
 
 const linkStyle = {
   padding: '1% 2%',
-  'border-radius': '4px',
-  'text-decoration': 'none'
+  'borderRadius': '4px',
+  'textDecoration': 'none'
 }
 
 const active = {
