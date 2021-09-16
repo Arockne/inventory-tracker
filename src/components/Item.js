@@ -1,10 +1,11 @@
 import React from 'react'
 
-function Item() {
+function Item({ item }) {
+  const { id, name, category, image } = item
   return (
     <div>
-      <img src={null} alt=""/>
-      <h3>{null}</h3>
+      <img src={image} alt={name}/>
+      <h3>{name}</h3>
       <button>Add</button>
     </div>
   )
