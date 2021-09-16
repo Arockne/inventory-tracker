@@ -1,20 +1,20 @@
 import React, { useState, useEffect } from 'react'
 import Search from './Search'
-import Item from './Item'
+import Items from './Items'
 
 function InventoryPage() {
-  const [masterInventory, setMasterInventory] = useState([])
+  const [inventory, setInventory] = useState([])
 
   useEffect(() => {
     fetch('http://localhost:3004/inventory')
     .then(r => r.json())
-    .then(setMasterInventory)
+    .then(setInventory)
   }, [])
-  
+
   return (
     <div className='inventory-page'>
       <Search />
-      
+      <Items inventory={inventory}/>
     </div>
   )
 }
