@@ -4,7 +4,6 @@ import NavBar from './NavBar'
 import Home from './Home'
 import InventoryPage from './InventoryPage'
 import NewItem from './NewItem'
-
 import {
   BrowserRouter as Router,
   Switch,
@@ -19,9 +18,15 @@ function App() {
     <div className="App">
       <Header />
       <NavBar />
-      <Home />
-      <InventoryPage />
-      <NewItem />
+      <Route exact path="/">
+        <Home />
+      </Route>
+      <Route path="/inventory">
+        <InventoryPage />
+      </Route>
+      <Route exact path="/new">
+        <NewItem />
+      </Route>
     </div>
   );
 }
