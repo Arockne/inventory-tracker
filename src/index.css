@@ -7,11 +7,18 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/********* Header ************/
 header h1 {
   text-align: center;
 }
 
+/********* NavBar ************/
 nav {
   display: flex;
   justify-content: space-evenly;
+}
+
+/********* Home ************/
+.home {
+  text-align: center;
 }
