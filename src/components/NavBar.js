@@ -1,6 +1,12 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
+const linkStyle = {
+  padding: '1% 2%',
+  'border-radius': '4px',
+  'text-decoration': 'none'
+}
+
 const active = {
   backgroundColor: 'black',
   color: 'red'
@@ -9,9 +15,9 @@ const active = {
 function NavBar() {
   return (
     <nav>
-      <NavLink exact to="/" activeStyle={active}>Home</NavLink>
-      <NavLink exact to="/inventory" activeStyle={active}>Inventory</NavLink>
-      <NavLink exact to="/new" activeStyle={active}>New</NavLink>
+      <NavLink exact to="/" style={linkStyle} activeStyle={active}>Home</NavLink>
+      <NavLink exact to="/inventory" style={linkStyle} activeStyle={active}>Inventory</NavLink>
+      <NavLink exact to="/new" style={linkStyle} activeStyle={active}>New</NavLink>
     </nav>
   )
 }
