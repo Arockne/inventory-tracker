@@ -2,7 +2,7 @@ import React from 'react'
 
 function NewItem() {
   return (
-    <form>
+    <form className="new-item">
       <label>Name:
         <input type="text" name="name" id="name" placeholder="Name..."/>
       </label>
