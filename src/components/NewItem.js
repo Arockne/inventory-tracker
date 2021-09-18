@@ -40,6 +40,7 @@ function NewItem() {
           <option value="oz">oz</option>
           <option value="lb">lb</option>
           <option value="g">g</option>
+          <option value="kg">kg</option>
           <option value="ea">ea</option>
         </select>
       </label>
