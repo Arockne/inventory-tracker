@@ -37,6 +37,7 @@ function NewItem() {
       <label>Amount:
         <input type="number" id="amount" min="1" />
         <select name="unitMeasurement">
+          <option value="oz">oz</option>
           <option value="lb">lb</option>
           <option value="g">g</option>
           <option value="ea">ea</option>
