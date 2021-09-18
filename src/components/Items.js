@@ -4,7 +4,7 @@ import Item from './Item'
 
 function Items({ inventory }) {
   return (
-    <Card.Group itemsPerRow={6}>
+    <Card.Group itemsPerRow={6} className="card-group">
       {inventory.map(item => <Item key={item.id} item={item}/>)}
     </Card.Group>
   )

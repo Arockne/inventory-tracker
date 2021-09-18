@@ -14,6 +14,7 @@ function InventoryPage() {
   return (
     <div className='inventory-page'>
       <Search />
+      <br />
       <Items inventory={inventory}/>
     </div>
   )
