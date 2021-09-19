@@ -35,7 +35,7 @@ function NewItem() {
         </select>
       </label>
       <label>Amount:
-        <input type="number" id="amount" min="1" />
+        <input type="number" id="amount" min="0" />
         <select name="unitMeasurement">
           <option value="oz">oz</option>
           <option value="lb">lb</option>
