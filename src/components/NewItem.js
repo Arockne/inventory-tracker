@@ -45,9 +45,9 @@ function NewItem() {
         </select>
       </label>
       <label>Price Per Unit:
-        <input type="number"/>
+        <input type="number" min="0" placeholder="0.00"/>
       </label>
-      <input type="submit" value="Add Item" min="0"/>
+      <input type="submit" value="Add Item" />
     </form>
   )
 }
