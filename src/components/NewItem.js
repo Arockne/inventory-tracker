@@ -103,6 +103,8 @@ function NewItem({ onAddItem }) {
           name="amount" 
           id="amount" 
           min="0" 
+          placeholder="0.00"
+          step=".01"
           value={formData.amount} 
           onChange={handleFormChange}
         />
@@ -121,6 +123,7 @@ function NewItem({ onAddItem }) {
           id="price"
           min="0" 
           placeholder="0.00" 
+          step=".01"
           value={formData.price}
           onChange={handleFormChange}
         />
