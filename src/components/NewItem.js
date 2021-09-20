@@ -20,11 +20,11 @@ function NewItem() {
     image: '',
     price: ''
   })
+  //console.log(formData)
 
   function onFormChange(e) {
     const {name, value} = e.target;
     const changes = { ...formData, [name]: value}
-
     setFormData(changes)
   }
 
@@ -37,7 +37,7 @@ function NewItem() {
           id="name" 
           placeholder="Name..." 
           value={formData.name}
-          onChange={setFormData}
+          onChange={onFormChange}
         />
       </label>
       <label>Image:
@@ -47,10 +47,11 @@ function NewItem() {
           id="image" 
           placeholder="Image..." 
           value={formData.image}
+          onChange={onFormChange}
         />
       </label>
       <label>Category:
-        <select name="category" value={formData.category} onChange={setFormData}>
+        <select name="category" value={formData.category} onChange={onFormChange}>
           <option value="">-- Choose a Category --</option>
           <option value="meat">Meat</option>
           <option value="poultry">Poultry</option>
@@ -65,13 +66,14 @@ function NewItem() {
       </label>
       <label>Amount:
         <input 
-          type="number" 
+          type="number"
+          name="amount" 
           id="amount" 
           min="0" 
           value={formData.amount} 
-          onChange={setFormData}
+          onChange={onFormChange}
         />
-        <select name="unitMeasurement" value={formData.unitMeasurement} onChange={setFormData}>
+        <select name="unitMeasurement" value={formData.unitMeasurement} onChange={onFormChange}>
           <option value="ea">ea</option>
           <option value="oz">oz</option>
           <option value="lb">lb</option>
@@ -82,10 +84,12 @@ function NewItem() {
       <label>Price Per Unit:
         <input 
           type="number" 
+          name="price"
+          id="price"
           min="0" 
           placeholder="0.00" 
           value={formData.price}
-          onChange={setFormData}
+          onChange={onFormChange}
         />
       </label>
       <input type="submit" value="Add Item" />
