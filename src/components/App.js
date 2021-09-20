@@ -30,6 +30,10 @@ function App() {
     .then(setInventory)
   }, [])
 
+  function handleAddItem(item) {
+    setInventory([ ...inventory, item ])
+  }
+
   return (
     <div className="App">
       <HeaderBlock />
@@ -41,7 +45,7 @@ function App() {
         <InventoryPage inventory={inventory}/>
       </Route>
       <Route exact path="/new">
-        <NewItem />
+        <NewItem onAddItem={handleAddItem}/>
       </Route>
     </div>
   );

@@ -11,7 +11,7 @@ import React, { useState } from 'react'
       "image": "https://images.unsplash.com/photo-1615485500710-aa71300612aa?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
     }
 */
-function NewItem() {
+function NewItem({ onAddItem }) {
   const [formData, setFormData] = useState({
     name: '',
     category: '',
@@ -28,7 +28,35 @@ function NewItem() {
   }
 
   function handleFormSubmit(e) {
+    e.preventDefault();
+    if (!formData.category) {
+      return;
+    }
 
+    const emptyFields =  {
+      name: '',
+      category: '',
+      unitMeasurement: 'ea',
+      amount: '',
+      image: '',
+      price: ''
+    }
+
+    formData.amount = parseFloat(formData.amount)
+    formData.price = parseFloat(formData.price)
+
+    fetch('http://localhost:3004/inventory', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    })
+    .then(r => r.json())
+    .then(data => {
+      onAddItem(data)
+      setFormData(emptyFields)
+    })
   }
 
   return (
@@ -41,6 +69,7 @@ function NewItem() {
           placeholder="Name..." 
           value={formData.name}
           onChange={handleFormChange}
+          required
         />
       </label>
       <label>Image:
@@ -51,6 +80,7 @@ function NewItem() {
           placeholder="Image..." 
           value={formData.image}
           onChange={handleFormChange}
+          required
         />
       </label>
       <label>Category:
