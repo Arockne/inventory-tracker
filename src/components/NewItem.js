@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 
 /*
@@ -12,6 +12,14 @@ import React from 'react'
     }
 */
 function NewItem() {
+  const [formData, setFormData] = useState({
+    name: '',
+    category: '',
+    unitMeasurement: 'ea',
+    amount: 0,
+    image: ''
+  })
+
   return (
     <form className="new-item">
       <label>Name:
@@ -37,11 +45,11 @@ function NewItem() {
       <label>Amount:
         <input type="number" id="amount" min="0" />
         <select name="unitMeasurement">
+          <option value="ea">ea</option>
           <option value="oz">oz</option>
           <option value="lb">lb</option>
           <option value="g">g</option>
           <option value="kg">kg</option>
-          <option value="ea">ea</option>
         </select>
       </label>
       <label>Price Per Unit:
