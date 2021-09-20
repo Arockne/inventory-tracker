@@ -20,16 +20,19 @@ function NewItem() {
     image: '',
     price: ''
   })
-  //console.log(formData)
 
-  function onFormChange(e) {
+  function handleFormChange(e) {
     const {name, value} = e.target;
     const changes = { ...formData, [name]: value}
     setFormData(changes)
   }
 
+  function handleFormSubmit(e) {
+
+  }
+
   return (
-    <form className="new-item">
+    <form className="new-item" onSubmit={handleFormSubmit}>
       <label>Name:
         <input 
           type="text" 
@@ -37,7 +40,7 @@ function NewItem() {
           id="name" 
           placeholder="Name..." 
           value={formData.name}
-          onChange={onFormChange}
+          onChange={handleFormChange}
         />
       </label>
       <label>Image:
@@ -47,11 +50,11 @@ function NewItem() {
           id="image" 
           placeholder="Image..." 
           value={formData.image}
-          onChange={onFormChange}
+          onChange={handleFormChange}
         />
       </label>
       <label>Category:
-        <select name="category" value={formData.category} onChange={onFormChange}>
+        <select name="category" value={formData.category} onChange={handleFormChange}>
           <option value="">-- Choose a Category --</option>
           <option value="meat">Meat</option>
           <option value="poultry">Poultry</option>
@@ -71,9 +74,9 @@ function NewItem() {
           id="amount" 
           min="0" 
           value={formData.amount} 
-          onChange={onFormChange}
+          onChange={handleFormChange}
         />
-        <select name="unitMeasurement" value={formData.unitMeasurement} onChange={onFormChange}>
+        <select name="unitMeasurement" value={formData.unitMeasurement} onChange={handleFormChange}>
           <option value="ea">ea</option>
           <option value="oz">oz</option>
           <option value="lb">lb</option>
@@ -89,7 +92,7 @@ function NewItem() {
           min="0" 
           placeholder="0.00" 
           value={formData.price}
-          onChange={onFormChange}
+          onChange={handleFormChange}
         />
       </label>
       <input type="submit" value="Add Item" />
