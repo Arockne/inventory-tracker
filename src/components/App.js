@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import HeaderBlock from './Header'
 import NavBar from './NavBar'
 import Home from './Home'
@@ -22,6 +22,14 @@ Add some styling: you're encouraged to write your CSS from scratch, either by us
 */
 
 function App() {
+  const [inventory, setInventory] = useState([])
+
+  useEffect(() => {
+    fetch('http://localhost:3004/inventory')
+    .then(r => r.json())
+    .then(setInventory)
+  }, [])
+
   return (
     <div className="App">
       <HeaderBlock />
@@ -30,7 +38,7 @@ function App() {
         <Home />
       </Route>
       <Route path="/inventory">
-        <InventoryPage />
+        <InventoryPage inventory={inventory}/>
       </Route>
       <Route exact path="/new">
         <NewItem />
