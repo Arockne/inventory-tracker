@@ -16,20 +16,41 @@ function NewItem() {
     name: '',
     category: '',
     unitMeasurement: 'ea',
-    amount: 0,
-    image: ''
+    amount: '',
+    image: '',
+    price: ''
   })
+
+  function onFormChange(e) {
+    const {name, value} = e.target;
+    const changes = { ...formData, [name]: value}
+
+    setFormData(changes)
+  }
 
   return (
     <form className="new-item">
       <label>Name:
-        <input type="text" name="name" id="name" placeholder="Name..."/>
+        <input 
+          type="text" 
+          name="name" 
+          id="name" 
+          placeholder="Name..." 
+          value={formData.name}
+          onChange={setFormData}
+        />
       </label>
       <label>Image:
-        <input type="text" name="image" id="image" placeholder="Image..."/>
+        <input 
+          type="text" 
+          name="image" 
+          id="image" 
+          placeholder="Image..." 
+          value={formData.image}
+        />
       </label>
       <label>Category:
-        <select name="category">
+        <select name="category" value={formData.category} onChange={setFormData}>
           <option value="">-- Choose a Category --</option>
           <option value="meat">Meat</option>
           <option value="poultry">Poultry</option>
@@ -43,8 +64,14 @@ function NewItem() {
         </select>
       </label>
       <label>Amount:
-        <input type="number" id="amount" min="0" />
-        <select name="unitMeasurement">
+        <input 
+          type="number" 
+          id="amount" 
+          min="0" 
+          value={formData.amount} 
+          onChange={setFormData}
+        />
+        <select name="unitMeasurement" value={formData.unitMeasurement} onChange={setFormData}>
           <option value="ea">ea</option>
           <option value="oz">oz</option>
           <option value="lb">lb</option>
@@ -53,7 +80,13 @@ function NewItem() {
         </select>
       </label>
       <label>Price Per Unit:
-        <input type="number" min="0" placeholder="0.00"/>
+        <input 
+          type="number" 
+          min="0" 
+          placeholder="0.00" 
+          value={formData.price}
+          onChange={setFormData}
+        />
       </label>
       <input type="submit" value="Add Item" />
     </form>
