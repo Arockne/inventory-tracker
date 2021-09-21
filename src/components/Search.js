@@ -1,9 +1,13 @@
 import React from 'react'
 import { Search as SearchBar } from 'semantic-ui-react'
 
-function Search({ inventory, searchByName, setSearchByName }) {
+function Search({ inventory, searchByName, setSearchByName, categoryFilter }) {
   function handleSearchField(e) {
     setSearchByName(e.target.value)
+  }
+
+  function handleCategoryChange(e) {
+    
   }
 
   const categoryOptions = inventory.reduce((a,b) => {
@@ -17,7 +21,8 @@ function Search({ inventory, searchByName, setSearchByName }) {
   return (
     <form>
       <label>Category:
-        <select>
+        <select value={categoryFilter} onChange={handleCategoryChange}>
+          <option value="">-- --</option>
           {
             categoryOptions
           }
