@@ -5,7 +5,7 @@ import Items from './Items'
 function InventoryPage({ inventory, searchByName, setSearchByName }) {
   return (
     <div className='inventory-page'>
-      <Search searchByName={searchByName} setSearchByName={setSearchByName}/>
+      <Search inventory={inventory} searchByName={searchByName} setSearchByName={setSearchByName}/>
       <br />
       <Items inventory={inventory}/>
     </div>
