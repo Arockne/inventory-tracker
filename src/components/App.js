@@ -23,8 +23,6 @@ Add some styling: you're encouraged to write your CSS from scratch, either by us
 
 function App() {
   const [inventory, setInventory] = useState([])
-  const [searchByName, setSearchByName] = useState('')
-  const [categoryFilter, setCategoryFilter] = useState('')
 
   useEffect(() => {
     fetch('http://localhost:3004/inventory')
@@ -44,7 +42,7 @@ function App() {
         <Home />
       </Route>
       <Route path="/inventory">
-        <InventoryPage inventory={inventory} searchByName={searchByName} setSearchByName={setSearchByName} categoryFilter={categoryFilter}/>
+        <InventoryPage inventory={inventory} />
       </Route>
       <Route exact path="/new">
         <NewItem onAddItem={handleAddItem}/>
