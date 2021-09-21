@@ -1,19 +1,8 @@
 import React from 'react'
-import { Card, Form, Image, Input } from 'semantic-ui-react'
+import { Card, Image } from 'semantic-ui-react'
 
-
-/*
-    {
-      "id": 3, 
-      "name": "peas",
-      "category": "produce", 
-      "unitMeasurement": "lb", 
-      "amount": 1,
-      "image": "https://images.unsplash.com/photo-1615485500710-aa71300612aa?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-    }
-*/
 function Item({ item }) {
-  const { id, name, category, amount, unitMeasurement, image } = item
+  const { name, category, amount, unitMeasurement, image } = item
   const itemName = name.split(' ').map(word => word[0].toUpperCase() + word.slice(1)).join(' ')
   return (
     <Card>

@@ -1,5 +1,4 @@
 import React from 'react'
-import { Search as SearchBar } from 'semantic-ui-react'
 
 function Search({ inventory, searchByName, setSearchByName, categoryFilter, setCategoryFilter }) {
   function handleSearchField(e) {
