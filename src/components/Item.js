@@ -14,7 +14,7 @@ import { Card, Form, Image, Input } from 'semantic-ui-react'
 */
 function Item({ item }) {
   const { id, name, category, amount, unitMeasurement, image } = item
-  const itemName = `${name[0].toUpperCase()}${name.slice(1)}`
+  const itemName = name.split(' ').map(word => word[0].toUpperCase() + word.slice(1)).join(' ')
   return (
     <Card>
       <Image src={image}/>
