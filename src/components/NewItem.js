@@ -42,7 +42,7 @@ function NewItem({ onAddItem }) {
       pricePerUnit: ''
     }
 
-    formData.name = formData.name.toLowerCase();
+    formData.name = formData.name.trim().toLowerCase();
     formData.amount = parseFloat(formData.amount)
     formData.pricePerUnit = parseFloat(formData.pricePerUnit)
 
