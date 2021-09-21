@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react'
 import Search from './Search'
 import Items from './Items'
 
-function InventoryPage({ inventory }) {
+function InventoryPage({ inventory, searchByName, setSearchByName }) {
   return (
     <div className='inventory-page'>
-      <Search />
+      <Search searchByName={searchByName} setSearchByName={setSearchByName}/>
       <br />
       <Items inventory={inventory}/>
     </div>

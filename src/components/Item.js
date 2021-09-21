@@ -17,7 +17,7 @@ function Item({ item }) {
   const itemName = `${name[0].toUpperCase()}${name.slice(1)}`
   return (
     <Card>
-      <Image src={image} size="large" />
+      <Image src={image}/>
       <Card.Content>
         <Card.Header>{itemName}</Card.Header>
         <Card.Description>

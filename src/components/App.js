@@ -23,6 +23,7 @@ Add some styling: you're encouraged to write your CSS from scratch, either by us
 
 function App() {
   const [inventory, setInventory] = useState([])
+  const [searchByName, setSearchByName] = useState('')
 
   useEffect(() => {
     fetch('http://localhost:3004/inventory')
@@ -34,6 +35,8 @@ function App() {
     setInventory([ ...inventory, item ])
   }
 
+  const inventoryResult = inventory.filter(item => item.name.toLowerCase().includes(searchByName.toLowerCase()))
+
   return (
     <div className="App">
       <HeaderBlock />
@@ -42,7 +45,7 @@ function App() {
         <Home />
       </Route>
       <Route path="/inventory">
-        <InventoryPage inventory={inventory}/>
+        <InventoryPage inventory={inventoryResult} searchByName={searchByName} setSearchByName={setSearchByName}/>
       </Route>
       <Route exact path="/new">
         <NewItem onAddItem={handleAddItem}/>
