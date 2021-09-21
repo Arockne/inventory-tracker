@@ -18,7 +18,7 @@ function NewItem({ onAddItem }) {
     unitMeasurement: 'ea',
     amount: '',
     image: '',
-    price: ''
+    pricePerUnit: ''
   })
 
   function handleFormChange(e) {
@@ -39,11 +39,12 @@ function NewItem({ onAddItem }) {
       unitMeasurement: 'ea',
       amount: '',
       image: '',
-      price: ''
+      pricePerUnit: ''
     }
 
+    formData.name = formData.name.toLowerCase();
     formData.amount = parseFloat(formData.amount)
-    formData.price = parseFloat(formData.price)
+    formData.pricePerUnit = parseFloat(formData.pricePerUnit)
 
     fetch('http://localhost:3004/inventory', {
       method: 'POST',
@@ -119,12 +120,12 @@ function NewItem({ onAddItem }) {
       <label>Price Per Unit:
         <input 
           type="number" 
-          name="price"
-          id="price"
+          name="pricePerUnit"
+          id="pricePerUnit"
           min="0" 
           placeholder="0.00" 
           step=".01"
-          value={formData.price}
+          value={formData.pricePerUnit}
           onChange={handleFormChange}
         />
       </label>
