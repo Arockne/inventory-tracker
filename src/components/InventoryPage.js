@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react'
 import Search from './Search'
 import Items from './Items'
 
-function InventoryPage({ inventory, searchByName, setSearchByName, categoryFilter }) {
+function InventoryPage({ inventory }) {
+  const [searchByName, setSearchByName] = useState('')
+  const [categoryFilter, setCategoryFilter] = useState('')
 
   const inventoryResult = inventory.filter(item => { 
     if (categoryFilter === item.category) {
@@ -15,7 +17,7 @@ function InventoryPage({ inventory, searchByName, setSearchByName, categoryFilte
 
   return (
     <div className='inventory-page'>
-      <Search inventory={inventory} searchByName={searchByName} setSearchByName={setSearchByName} categoryFilter={categoryFilter}/>
+      <Search inventory={inventory} searchByName={searchByName} setSearchByName={setSearchByName} categoryFilter={categoryFilter} setCategoryFilter={setCategoryFilter}/>
       <br />
       <Items inventory={inventoryResult}/>
     </div>
