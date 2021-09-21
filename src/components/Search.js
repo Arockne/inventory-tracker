@@ -1,17 +1,16 @@
 import React from 'react'
 import { Search as SearchBar } from 'semantic-ui-react'
 
-function Search({ inventory, searchByName, setSearchByName, categoryFilter }) {
+function Search({ inventory, searchByName, setSearchByName, categoryFilter, setCategoryFilter }) {
   function handleSearchField(e) {
     setSearchByName(e.target.value)
   }
 
   function handleCategoryChange(e) {
-    
+    setCategoryFilter(e.target.value)
   }
 
   const categoryOptions = inventory.reduce((a,b) => {
-    console.log(a)
     if (!a.includes(b.category)) {
       a.push(b.category)
     }
