@@ -49,7 +49,7 @@ function App() {
       <NavBar />
       <Switch>
         <Route exact path="/">
-          <Home />
+          <Home inventory={inventory}/>
         </Route>
         <Route exact path="/inventory">
           <InventoryPage inventory={inventory} />
