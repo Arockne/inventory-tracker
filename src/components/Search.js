@@ -18,7 +18,7 @@ function Search({ inventory, searchByName, setSearchByName, categoryFilter, setC
   
   return (
     <form>
-      <label>Category:
+      <label>Filter By:
         <select value={categoryFilter} onChange={handleCategoryChange}>
           <option value="">-- --</option>
           {
