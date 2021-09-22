@@ -129,7 +129,7 @@ function ItemForm({ onAddItem, inventory }) {
           onChange={handleFormChange}
         />
       </label>
-      <input type="submit" value="Add Item" />
+      <input type="submit" value={formData.id ? "Edit Item" : "Add Item"} />
     </form>
   )
 }
