@@ -4,7 +4,7 @@ import NavBar from './NavBar'
 import Home from './Home'
 import InventoryPage from './InventoryPage'
 import ItemForm from './ItemForm'
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 
 /*
 You must make a single page application (only one index.html file) using create-react-app
@@ -47,18 +47,23 @@ function App() {
     <div className="App">
       <HeaderBlock />
       <NavBar />
-      <Route exact path="/">
-        <Home />
-      </Route>
-      <Route path="/inventory">
-        <InventoryPage inventory={inventory} />
-      </Route>
-      <Route exact path="/new">
-        <ItemForm onAddItem={handleAddItem} inventory={inventory}/>
-      </Route>
-      <Route exac path="/edit/:name">
-        <ItemForm onAddItem={handleItemEdit} inventory={inventory}/>
-      </Route>
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route exact path="/inventory">
+          <InventoryPage inventory={inventory} />
+        </Route>
+        <Route exact path="/new">
+          <ItemForm onAddItem={handleAddItem} inventory={inventory}/>
+        </Route>
+        <Route exac path="/edit/:name">
+          <ItemForm onAddItem={handleItemEdit} inventory={inventory}/>
+        </Route>
+        <Route path="/*">
+          <h1>404 Not Found!</h1>
+        </Route>
+      </Switch>
     </div>
   );
 }
