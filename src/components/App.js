@@ -47,6 +47,9 @@ function App() {
       <Route exact path="/new">
         <NewItem onAddItem={handleAddItem}/>
       </Route>
+      <Route exac path="/edit/:name">
+        <NewItem />
+      </Route>
     </div>
   );
 }

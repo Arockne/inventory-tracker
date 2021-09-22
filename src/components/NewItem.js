@@ -1,16 +1,12 @@
 import React, { useState } from 'react'
+import {
+  Switch,
+  Route,
+  Link,
+  useRouteMatch,
+  useParams
+} from "react-router-dom";
 
-
-/*
-    {
-      "id": 3, 
-      "name": "peas",
-      "category": "produce", 
-      "unitMeasurement": "lb", 
-      "amount": 1,
-      "image": "https://images.unsplash.com/photo-1615485500710-aa71300612aa?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-    }
-*/
 function NewItem({ onAddItem }) {
   const [formData, setFormData] = useState({
     name: '',

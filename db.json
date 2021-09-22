@@ -134,6 +134,24 @@
       "image": "https://www.kroger.com/product/images/medium/front/0001111083838",
       "pricePerUnit": 0.55,
       "id": 15
+    },
+    {
+      "name": "red lentil pasta",
+      "category": "pantry",
+      "unitMeasurement": "ea",
+      "amount": 1,
+      "image": "https://www.kroger.com/product/images/medium/front/0007680800847",
+      "pricePerUnit": 2.59,
+      "id": 16
+    },
+    {
+      "name": "molasses",
+      "category": "pantry",
+      "unitMeasurement": "ea",
+      "amount": 1,
+      "image": "https://www.kroger.com/product/images/medium/front/0007240071124",
+      "pricePerUnit": 4.3,
+      "id": 17
     }
   ]
 }
