@@ -15,7 +15,8 @@ function ItemForm({ onAddItem, inventory }) {
   const history = useHistory()
 
   useEffect(() => {
-    if (name) {
+    const containsItem = inventory.some(item => item.name === name);
+    if (name && containsItem) {
       const itemToChange = inventory.find(item => item.name === name);
       setFormData(itemToChange)
     }
