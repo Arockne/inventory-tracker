@@ -3,7 +3,7 @@ import HeaderBlock from './Header'
 import NavBar from './NavBar'
 import Home from './Home'
 import InventoryPage from './InventoryPage'
-import NewItem from './NewItem'
+import ItemForm from './ItemForm'
 import { Route } from "react-router-dom";
 
 /*
@@ -45,10 +45,10 @@ function App() {
         <InventoryPage inventory={inventory} />
       </Route>
       <Route exact path="/new">
-        <NewItem onAddItem={handleAddItem}/>
+        <ItemForm onAddItem={handleAddItem}/>
       </Route>
       <Route exac path="/edit/:name">
-        <NewItem />
+        <ItemForm />
       </Route>
     </div>
   );

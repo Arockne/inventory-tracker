@@ -1,13 +1,7 @@
 import React, { useState } from 'react'
-import {
-  Switch,
-  Route,
-  Link,
-  useRouteMatch,
-  useParams
-} from "react-router-dom";
+import { useParams } from "react-router-dom";
 
-function NewItem({ onAddItem }) {
+function ItemForm({ onAddItem }) {
   const [formData, setFormData] = useState({
     name: '',
     category: '',
@@ -130,4 +124,4 @@ function NewItem({ onAddItem }) {
   )
 }
 
-export default NewItem
+export default ItemForm
