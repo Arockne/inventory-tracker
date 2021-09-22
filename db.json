@@ -5,8 +5,8 @@
       "name": "cabbage",
       "category": "produce",
       "unitMeasurement": "lb",
-      "pricePerUnit": "0.59",
-      "amount": 1,
+      "pricePerUnit": 0.59,
+      "amount": 2,
       "image": "https://images.unsplash.com/photo-1624482761207-33a7a8f1e2f5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80"
     },
     {
@@ -23,7 +23,7 @@
       "name": "peas",
       "category": "produce",
       "unitMeasurement": "oz",
-      "pricePerUnit": "0.84",
+      "pricePerUnit": 0.84,
       "amount": 1,
       "image": "https://images.unsplash.com/photo-1615485500710-aa71300612aa?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
     },
@@ -49,7 +49,7 @@
       "name": "salmon",
       "category": "seafood",
       "unitMeasurement": "lb",
-      "amount": 10,
+      "amount": 12,
       "image": "https://images.unsplash.com/photo-1614627293113-e7e68163d958?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1160&q=80",
       "pricePerUnit": 6.97,
       "id": 6
@@ -139,7 +139,7 @@
       "name": "red lentil pasta",
       "category": "pantry",
       "unitMeasurement": "ea",
-      "amount": 1,
+      "amount": 3,
       "image": "https://www.kroger.com/product/images/medium/front/0007680800847",
       "pricePerUnit": 2.59,
       "id": 16
