@@ -45,19 +45,35 @@ function ItemForm({ onAddItem, inventory }) {
     formData.name = formData.name.trim().toLowerCase();
     formData.amount = parseFloat(formData.amount)
     formData.pricePerUnit = parseFloat(formData.pricePerUnit)
+    
+    if (formData.id) {
+      fetch(`http://localhost:3004/inventory/${formData.id}`, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      })
+      .then(r => r.json())
+      .then(data => {
+        onAddItem(data)
+        setFormData(emptyFields)
+      })
 
-    fetch('http://localhost:3004/inventory', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(formData)
-    })
-    .then(r => r.json())
-    .then(data => {
-      onAddItem(data)
-      setFormData(emptyFields)
-    })
+    } else {
+      fetch('http://localhost:3004/inventory', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      })
+      .then(r => r.json())
+      .then(data => {
+        onAddItem(data)
+        setFormData(emptyFields)
+      })
+    }
   }
 
   return (
