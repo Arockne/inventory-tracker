@@ -34,6 +34,15 @@ function App() {
     setInventory([ ...inventory, item ])
   }
 
+  function handleItemEdit(itemEdit) {
+    setInventory(inventory.map(item => {
+      if (item.id === itemEdit.id) {
+        return itemEdit
+      }
+      return item
+    }))
+  }
+
   return (
     <div className="App">
       <HeaderBlock />
@@ -45,10 +54,10 @@ function App() {
         <InventoryPage inventory={inventory} />
       </Route>
       <Route exact path="/new">
-        <ItemForm onAddItem={handleAddItem}/>
+        <ItemForm onAddItem={handleAddItem} inventory={inventory}/>
       </Route>
       <Route exac path="/edit/:name">
-        <ItemForm />
+        <ItemForm onAddItem={handleItemEdit} inventory={inventory}/>
       </Route>
     </div>
   );
