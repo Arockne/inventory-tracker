@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useParams } from "react-router-dom";
 
-function ItemForm({ onAddItem }) {
+function ItemForm({ onAddItem, inventory }) {
   const [formData, setFormData] = useState({
     name: '',
     category: '',
@@ -10,6 +10,16 @@ function ItemForm({ onAddItem }) {
     image: '',
     pricePerUnit: ''
   })
+
+  const {name} = useParams()
+
+  useEffect(() => {
+    if (name) {
+      const itemToChange = inventory.find(item => item.name === name);
+      setFormData(itemToChange)
+      
+    }
+  }, [name, inventory])
 
   function handleFormChange(e) {
     const {name, value} = e.target;
