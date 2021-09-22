@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useParams, useHistory } from "react-router-dom";
+import { useParams, useHistory, useRouteMatch } from "react-router-dom";
 
 function ItemForm({ onAddItem, inventory }) {
   const [formData, setFormData] = useState({
@@ -13,14 +13,19 @@ function ItemForm({ onAddItem, inventory }) {
 
   const {name} = useParams()
   const history = useHistory()
+  const match = useRouteMatch()
+  const containsItem = inventory.some(item => item.name === name);
 
   useEffect(() => {
-    const containsItem = inventory.some(item => item.name === name);
     if (name && containsItem) {
       const itemToChange = inventory.find(item => item.name === name);
       setFormData(itemToChange)
     }
-  }, [name, inventory])
+  }, [name, inventory, containsItem])
+
+  if (match.path === '/edit/:name' && !containsItem) {
+    return <h1>404 not found!</h1>
+  }
 
   function handleFormChange(e) {
     const {name, value} = e.target;
