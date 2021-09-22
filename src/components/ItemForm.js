@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 
 function ItemForm({ onAddItem, inventory }) {
   const [formData, setFormData] = useState({
@@ -12,12 +12,12 @@ function ItemForm({ onAddItem, inventory }) {
   })
 
   const {name} = useParams()
+  const history = useHistory()
 
   useEffect(() => {
     if (name) {
       const itemToChange = inventory.find(item => item.name === name);
       setFormData(itemToChange)
-      
     }
   }, [name, inventory])
 
@@ -58,6 +58,7 @@ function ItemForm({ onAddItem, inventory }) {
       .then(data => {
         onAddItem(data)
         setFormData(emptyFields)
+        history.push('/inventory')
       })
 
     } else {
@@ -72,6 +73,7 @@ function ItemForm({ onAddItem, inventory }) {
       .then(data => {
         onAddItem(data)
         setFormData(emptyFields)
+        history.push('/inventory')
       })
     }
   }
