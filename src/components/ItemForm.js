@@ -2,12 +2,9 @@ import React, { useState, useEffect } from 'react'
 import { useParams, useHistory, useRouteMatch } from "react-router-dom";
 import {
   Button,
-  Checkbox,
   Form,
   Input,
-  Radio,
   Select,
-  TextArea,
 } from 'semantic-ui-react'
 
 const categoryOptions = [
@@ -56,8 +53,7 @@ function ItemForm({ onAddItem, inventory }) {
     return <h1>404 not found!</h1>
   }
 
-  function handleFormChange(e) {
-    const {name, value} = e.target;
+  function handleFormChange(e, { name, value }) {
     const changes = { ...formData, [name]: value}
     setFormData(changes)
   }
@@ -190,47 +186,75 @@ function ItemForm({ onAddItem, inventory }) {
         </div>
         <input type="submit" value={formData.id ? "Edit Item" : "Add Item"} />
       </form>
-      <Form>
-      <Form.Field 
-        control={Input} 
-        type="text" 
-        label="Name" 
-        placeholder="Name" 
-      />
-      <Form.Field 
-        control={Input} 
-        type="text" 
-        label="Image" 
-        placeholder="Image" 
-      />
-      <Form.Field 
-        control={Select} 
-        label="Category" 
-        options={categoryOptions} 
-        placeholder="Category"
-      />
-      <Form.Group inline>
+      <Form onSubmit={handleFormSubmit}>
         <Form.Field 
           control={Input} 
-          type="number" 
-          label="Amount" 
-          placeholder="0.00"
+          type="text" 
+          label="Name" 
+          placeholder="Name"
+          name="name"
+          value={formData.name}
+          onChange={handleFormChange}
+          required
+        />
+        <Form.Field 
+          control={Input} 
+          type="text" 
+          label="Image" 
+          placeholder="Image" 
+          name="image"
+          value={formData.image}
+          onChange={handleFormChange}
+          required
         />
         <Form.Field 
           control={Select} 
-          label="Unit" 
-          options={unitOptions} 
-          placeholder="Unit"
+          label="Category" 
+          options={categoryOptions} 
+          placeholder="Category"
+          name="category"
+          value={formData.category} 
+          onChange={handleFormChange}
+          required
+        />
+        <Form.Group inline>
+          <Form.Field 
+            control={Input} 
+            type="number" 
+            label="Amount" 
+            placeholder="0.00"
+            step=".01"
+            min="0"
+            name="amount"
+            value={formData.amount} 
+            onChange={handleFormChange}
+            required
           />
-      </Form.Group>
-      <Form.Field 
-        control={Input}
-        type="number" 
-        label="Price Per Unit" 
-        placeholder="0.00"
-      /> 
-      <Form.Field control={Button}>Add Item</Form.Field>
-    </Form>
+          <Form.Field 
+            control={Select} 
+            label="Unit" 
+            options={unitOptions} 
+            placeholder="Unit"
+            name="unitMeasurement" 
+            value={formData.unitMeasurement} 
+            onChange={handleFormChange}
+            required
+          />
+        </Form.Group>
+        <Form.Field 
+          control={Input}
+          type="number" 
+          label="Price Per Unit" 
+          placeholder="0.00"
+          step=".01"
+          min="0"
+          name="pricePerUnit"
+          value={formData.pricePerUnit}
+          onChange={handleFormChange}
+          required
+        /> 
+        <Form.Field control={Button}>Add Item</Form.Field>
+      </Form>
     </div>
   )
 }
