@@ -8,8 +8,28 @@ body {
 }
 
 /********* Header ************/
-header h1 {
+header {
   text-align: center;
+  border: none;
+  margin: calc(2rem - .14285714em) 0 1rem;
+  padding: 0 0;
+  font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+  font-weight: 700;
+  line-height: 1.28571429em;
+  text-transform: none;
+  color: rgba(0,0,0,.87);
+}
+
+header:first-child {
+  margin-top: -.14285714em;
+}
+
+header h1 {
+  font-size: 6rem
+}
+
+.title {
+  text-shadow: red 0 -1px;
 }
 
 /********* NavBar ************/
