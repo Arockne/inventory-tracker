@@ -1,4 +1,5 @@
 import React from 'react'
+import TableTotals from './TableTotals'
 
 /*
 I need to create two functions
@@ -13,13 +14,13 @@ function Home({ inventory }) {
     } else {
       a[b.category] += currentItemTotal;
     }
-    console.log(a)
     return a;
   }, {})
 
   return (
     <div className="home">
       <h2>Welcome to my inventory food tracker</h2>
+      <TableTotals />
     </div>
   )
 }
