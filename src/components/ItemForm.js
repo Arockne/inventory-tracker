@@ -85,81 +85,83 @@ function ItemForm({ onAddItem, inventory }) {
   }
 
   return (
-    <form className="item-form" onSubmit={handleFormSubmit}>
-      <div>
-        <label htmlFor="name">Name:</label>
-        <input 
-          type="text" 
-          name="name" 
-          id="name" 
-          placeholder="Name..." 
-          value={formData.name}
-          onChange={handleFormChange}
-          required
-        />
-      </div>
-      <div>
-        <label htmlFor="image">Image:</label>
-        <input 
-          type="text" 
-          name="image" 
-          id="image" 
-          placeholder="Image..." 
-          value={formData.image}
-          onChange={handleFormChange}
-          required
-        />
-      </div>
-      <div>
-        <label htmlFor="category">Category:</label>
-        <select name="category" id="category" value={formData.category} onChange={handleFormChange}>
-          <option value="">-- Choose a Category --</option>
-          <option value="meat">Meat</option>
-          <option value="poultry">Poultry</option>
-          <option value="seafood">Seafood</option>
-          <option value="dairy">Dairy</option>
-          <option value="produce">Produce</option>
-          <option value="bakery">Bakery and Desserts</option>
-          <option value="supplies">Supplies</option>
-          <option value="beverages">Beverages</option>
-          <option value="pantry">Pantry Staples</option>
-        </select>
-      </div>
-      <div>
-        <label htmlFor="amount">Amount:</label>
-        <input 
-          type="number"
-          name="amount" 
-          id="amount" 
-          min="0" 
-          placeholder="0.00"
-          step=".01"
-          value={formData.amount} 
-          onChange={handleFormChange}
-        />
-        <select name="unitMeasurement" value={formData.unitMeasurement} onChange={handleFormChange}>
-          <option value="ea">ea</option>
-          <option value="oz">oz</option>
-          <option value="lb">lb</option>
-          <option value="g">g</option>
-          <option value="kg">kg</option>
-        </select>
-      </div>
-      <div>
-        <label htmlFor="pricePerUnit">Price Per Unit:</label>
-        <input 
-          type="number" 
-          name="pricePerUnit"
-          id="pricePerUnit"
-          min="0" 
-          placeholder="0.00" 
-          step=".01"
-          value={formData.pricePerUnit}
-          onChange={handleFormChange}
-        />
-      </div>
-      <input type="submit" value={formData.id ? "Edit Item" : "Add Item"} />
-    </form>
+    <div className="item-form">
+      <form onSubmit={handleFormSubmit}>
+        <div>
+          <label htmlFor="name">Name:</label>
+          <input 
+            type="text" 
+            name="name" 
+            id="name" 
+            placeholder="Name..." 
+            value={formData.name}
+            onChange={handleFormChange}
+            required
+          />
+        </div>
+        <div>
+          <label htmlFor="image">Image:</label>
+          <input 
+            type="text" 
+            name="image" 
+            id="image" 
+            placeholder="Image..." 
+            value={formData.image}
+            onChange={handleFormChange}
+            required
+          />
+        </div>
+        <div>
+          <label htmlFor="category">Category:</label>
+          <select name="category" id="category" value={formData.category} onChange={handleFormChange}>
+            <option value="">-- Choose a Category --</option>
+            <option value="meat">Meat</option>
+            <option value="poultry">Poultry</option>
+            <option value="seafood">Seafood</option>
+            <option value="dairy">Dairy</option>
+            <option value="produce">Produce</option>
+            <option value="bakery">Bakery and Desserts</option>
+            <option value="supplies">Supplies</option>
+            <option value="beverages">Beverages</option>
+            <option value="pantry">Pantry Staples</option>
+          </select>
+        </div>
+        <div>
+          <label htmlFor="amount">Amount:</label>
+          <input 
+            type="number"
+            name="amount" 
+            id="amount" 
+            min="0" 
+            placeholder="0.00"
+            step=".01"
+            value={formData.amount} 
+            onChange={handleFormChange}
+          />
+          <select name="unitMeasurement" value={formData.unitMeasurement} onChange={handleFormChange}>
+            <option value="ea">ea</option>
+            <option value="oz">oz</option>
+            <option value="lb">lb</option>
+            <option value="g">g</option>
+            <option value="kg">kg</option>
+          </select>
+        </div>
+        <div>
+          <label htmlFor="pricePerUnit">Price Per Unit:</label>
+          <input 
+            type="number" 
+            name="pricePerUnit"
+            id="pricePerUnit"
+            min="0" 
+            placeholder="0.00" 
+            step=".01"
+            value={formData.pricePerUnit}
+            onChange={handleFormChange}
+          />
+        </div>
+        <input type="submit" value={formData.id ? "Edit Item" : "Add Item"} />
+      </form>
+    </div>
   )
 }
 
