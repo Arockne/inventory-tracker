@@ -2,14 +2,22 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 
 const linkStyle = {
-  padding: '1% 2%',
-  'borderRadius': '4px',
-  'textDecoration': 'none'
+  margin: '0 1rem',
+  padding: '1% 3%',
+  color: 'red',
+  border: 'red solid 1px',
+  'textDecoration': 'none',
+  'borderRadius': '20px'
 }
 
 const active = {
+  margin: '0 1rem',
+  padding: '1% 3%',
+  color: 'red',
+  border: 'red solid 1px',
   backgroundColor: 'black',
-  color: 'red'
+  'textDecoration': 'none',
+  'borderRadius': '20px'
 }
 
 function NavBar() {
