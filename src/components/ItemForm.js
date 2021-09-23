@@ -85,7 +85,7 @@ function ItemForm({ onAddItem, inventory }) {
   }
 
   return (
-    <form className="new-item" onSubmit={handleFormSubmit}>
+    <form className="item-form" onSubmit={handleFormSubmit}>
       <label>Name:
         <input 
           type="text" 
