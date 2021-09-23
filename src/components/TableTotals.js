@@ -17,8 +17,6 @@ function TableTotals({ inventory }) {
     return Math.round((a + b + Number.EPSILON) * 100) / 100
   }, 0)
 
-  const totalTableRow = ['Total Cost of Goods', totalSum]
-
   return (
     <Table basic='very' celled collapsing>
       <Table.Header>
@@ -29,9 +27,9 @@ function TableTotals({ inventory }) {
       </Table.Header>
       <Table.Body>
         {
-          Object.entries(pricesByCategory).map(cat => <TableTotal key={cat[0]} categoryTotal={cat}/>)
+          Object.entries(pricesByCategory).map(([cat, total]) => <TableTotal key={cat} category={cat} total={total}/>)
         }
-        <TableTotal categoryTotal={totalTableRow}/>
+        <TableTotal category={'Total Coast Of Goods'} total={totalSum}/>
       </Table.Body>
     </Table>
   )

@@ -1,8 +1,7 @@
 import React from 'react'
 import { Header, Table } from 'semantic-ui-react'
 
-function TableTotal({ categoryTotal }) {
-  const [category, total] = categoryTotal
+function TableTotal({ category, total}) {
   const label = category.split(' ').map(word => word[0].toUpperCase() + word.slice(1)).join(' ')
   return (
     <Table.Row>
