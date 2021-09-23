@@ -1,4 +1,5 @@
 import React from 'react'
+import { Header, Image, Table } from 'semantic-ui-react'
 
 function TableTotals({ inventory }) {
   const pricesByCategory = inventory.reduce((a, b) => {
@@ -12,7 +13,14 @@ function TableTotals({ inventory }) {
   }, {})
 
   return (
-    <table></table>
+    <Table basic='very' celled collapsing>
+      <Table.Header>
+        <Table.Row>
+          <Table.HeaderCell>Category</Table.HeaderCell>
+          <Table.HeaderCell>Total Cost</Table.HeaderCell>
+        </Table.Row>
+      </Table.Header>
+    </Table>
   )
 }
 
