@@ -1,4 +1,5 @@
 import React from 'react'
+import TableTotal from './TableTotal'
 import { Header, Image, Table } from 'semantic-ui-react'
 
 function TableTotals({ inventory }) {
@@ -12,7 +13,10 @@ function TableTotals({ inventory }) {
     return a;
   }, {})
   
-  const totalSum = pricesByCategory.reduce((a, b) => a + b)
+  const totalSum = Object.values(pricesByCategory).reduce((a,b) => {
+    console.log(a);
+    return Math.round((a + b + Number.EPSILON) * 100) / 100
+  }, 0)
 
   return (
     <Table basic='very' celled collapsing>
@@ -22,6 +26,8 @@ function TableTotals({ inventory }) {
           <Table.HeaderCell>Total Cost</Table.HeaderCell>
         </Table.Row>
       </Table.Header>
+      <Table.Body>
+      </Table.Body>
     </Table>
   )
 }
