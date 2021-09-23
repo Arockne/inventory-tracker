@@ -1,6 +1,6 @@
 import React from 'react'
 import TableTotal from './TableTotal'
-import { Header, Image, Table } from 'semantic-ui-react'
+import { Table } from 'semantic-ui-react'
 
 function TableTotals({ inventory }) {
   const pricesByCategory = inventory.reduce((a, b) => {
@@ -14,7 +14,6 @@ function TableTotals({ inventory }) {
   }, {})
   
   const totalSum = Object.values(pricesByCategory).reduce((a,b) => {
-    console.log(a);
     return Math.round((a + b + Number.EPSILON) * 100) / 100
   }, 0)
 
@@ -27,6 +26,9 @@ function TableTotals({ inventory }) {
         </Table.Row>
       </Table.Header>
       <Table.Body>
+        {
+          Object.entries(pricesByCategory).map(cat => <TableTotal key={cat[0]} categoryTotal={cat}/>)
+        }
       </Table.Body>
     </Table>
   )
