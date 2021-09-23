@@ -86,7 +86,8 @@ function ItemForm({ onAddItem, inventory }) {
 
   return (
     <form className="item-form" onSubmit={handleFormSubmit}>
-      <label>Name:
+      <div>
+        <label htmlFor="name">Name:</label>
         <input 
           type="text" 
           name="name" 
@@ -96,8 +97,9 @@ function ItemForm({ onAddItem, inventory }) {
           onChange={handleFormChange}
           required
         />
-      </label>
-      <label>Image:
+      </div>
+      <div>
+        <label htmlFor="image">Image:</label>
         <input 
           type="text" 
           name="image" 
@@ -107,9 +109,10 @@ function ItemForm({ onAddItem, inventory }) {
           onChange={handleFormChange}
           required
         />
-      </label>
-      <label>Category:
-        <select name="category" value={formData.category} onChange={handleFormChange}>
+      </div>
+      <div>
+        <label htmlFor="category">Category:</label>
+        <select name="category" id="category" value={formData.category} onChange={handleFormChange}>
           <option value="">-- Choose a Category --</option>
           <option value="meat">Meat</option>
           <option value="poultry">Poultry</option>
@@ -121,8 +124,9 @@ function ItemForm({ onAddItem, inventory }) {
           <option value="beverages">Beverages</option>
           <option value="pantry">Pantry Staples</option>
         </select>
-      </label>
-      <label>Amount:
+      </div>
+      <div>
+        <label htmlFor="amount">Amount:</label>
         <input 
           type="number"
           name="amount" 
@@ -140,8 +144,9 @@ function ItemForm({ onAddItem, inventory }) {
           <option value="g">g</option>
           <option value="kg">kg</option>
         </select>
-      </label>
-      <label>Price Per Unit:
+      </div>
+      <div>
+        <label htmlFor="pricePerUnit">Price Per Unit:</label>
         <input 
           type="number" 
           name="pricePerUnit"
@@ -152,7 +157,7 @@ function ItemForm({ onAddItem, inventory }) {
           value={formData.pricePerUnit}
           onChange={handleFormChange}
         />
-      </label>
+      </div>
       <input type="submit" value={formData.id ? "Edit Item" : "Add Item"} />
     </form>
   )
