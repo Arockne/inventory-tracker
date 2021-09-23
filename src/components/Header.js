@@ -1,10 +1,9 @@
 import React from 'react'
+import { Header as Title }  from 'semantic-ui-react'
 
 function Header() {
   return (
-    <header>
-      <h1>Inventory Tracker<span>🍌🍇🥬</span></h1>
-    </header>
+    <Title as="h1" content="📋 Inventory Tracker 🧮"/>
   )
 }
 
