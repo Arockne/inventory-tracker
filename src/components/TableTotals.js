@@ -11,6 +11,8 @@ function TableTotals({ inventory }) {
     }
     return a;
   }, {})
+  
+  const totalSum = pricesByCategory.reduce((a, b) => a + b)
 
   return (
     <Table basic='very' celled collapsing>
