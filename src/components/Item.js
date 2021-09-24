@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, Image } from 'semantic-ui-react'
+import { Card, Image, Icon } from 'semantic-ui-react'
 import { Link } from "react-router-dom";
 
 function Item({ item }) {
@@ -39,7 +39,7 @@ function Item({ item }) {
         <Card.Header>
           {itemName}
           <Link to={`./edit/${name}`}>
-            <button>✏️</button>
+            <Icon name="write" size="large" color="black"/>
           </Link>
         </Card.Header>
         <Card.Description content={`Category: ${category}`} />
