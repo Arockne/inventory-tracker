@@ -2,23 +2,10 @@ import React from 'react'
 import { Card, Image } from 'semantic-ui-react'
 import { Link } from "react-router-dom";
 
-/*
-const categoryOptions = [
-  { key: 'meat', text:'Meat', value:'meat' },
-  { key: 'poultry', text:'Poultry', value:'poultry' },
-  { key: 'seafood', text:'Seafood', value:'seafood' },
-  { key: 'dairy', text:'Dairy', value:'dairy'},
-  { key: 'produce', text:'Produce', value:'produce' },
-  { key: 'bakery', text:'Bakery and Desserts', value:'bakery' },
-  { key: 'supplies', text:'Supplies', value:'supplies' },
-  { key: 'beverages', text:'Beverages', value:'beverages' },
-  { key: 'pantry', text:'Pantry Staples', value:'pantry' }
-]
-*/
-
 function Item({ item }) {
-  const { name, category, amount, unitMeasurement, image } = item
+  const { name, category, amount, unitMeasurement, image, pricePerUnit } = item
   const itemName = name.split(' ').map(word => word[0].toUpperCase() + word.slice(1)).join(' ')
+  const totalCost = (Math.round(((parseFloat(pricePerUnit) * parseFloat(amount)) + Number.EPSILON) * 100)) / 100
 
   function cardColor({ category }) {
     switch(category) {
@@ -55,14 +42,9 @@ function Item({ item }) {
             <button>✏️</button>
           </Link>
         </Card.Header>
-        <Card.Description>
-          {
-            `
-              Category: ${category}
-              Amount: ${amount}${unitMeasurement}
-            `
-          }
-        </Card.Description>
+        <Card.Description content={`Category: ${category}`} />
+        <Card.Description content={`Amount: ${amount}${unitMeasurement}`} />
+        <Card.Description content={`Total Cost: $${totalCost}`} />
       </Card.Content>
     </Card>
   )
