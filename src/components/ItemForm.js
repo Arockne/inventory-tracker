@@ -48,6 +48,8 @@ function ItemForm({ onAddItem, inventory }) {
     if (name && containsItem) {
       const itemToChange = inventory.find(item => item.name === name);
       setFormData(itemToChange)
+    } else {
+      setFormData(emptyFields)
     }
   }, [name, inventory, containsItem])
 
