@@ -64,6 +64,7 @@ function ItemForm({ onAddItem, inventory }) {
 
   function handleFormSubmit(e) {
     e.preventDefault();
+    
     if (!formData.category) {
       return;
     }
@@ -71,7 +72,7 @@ function ItemForm({ onAddItem, inventory }) {
     formData.name = formData.name.trim().toLowerCase();
     formData.amount = parseFloat(formData.amount)
     formData.pricePerUnit = parseFloat(formData.pricePerUnit)
-    
+
     if (formData.id) {
       fetch(`http://localhost:3004/inventory/${formData.id}`, {
         method: 'PATCH',
@@ -86,7 +87,6 @@ function ItemForm({ onAddItem, inventory }) {
         setFormData(emptyFields)
         history.push('/inventory')
       })
-
     } else {
       fetch('http://localhost:3004/inventory', {
         method: 'POST',
