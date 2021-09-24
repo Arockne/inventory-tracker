@@ -152,6 +152,15 @@
       "image": "https://www.kroger.com/product/images/medium/front/0007240071124",
       "pricePerUnit": 4.3,
       "id": 17
+    },
+    {
+      "name": "garlic",
+      "category": "produce",
+      "unitMeasurement": "ea",
+      "amount": 1,
+      "image": "https://images.unsplash.com/photo-1587049332298-1c42e83937a7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=880&q=80",
+      "pricePerUnit": 0.5,
+      "id": 18
     }
   ]
 }
