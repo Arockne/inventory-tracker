@@ -1,8 +1,9 @@
 import React from 'react'
 import { Header, Table } from 'semantic-ui-react'
+import { capitalize } from '../helpers'
 
 function TableTotal({ category, total}) {
-  const label = category.split(' ').map(word => word[0].toUpperCase() + word.slice(1)).join(' ')
+  const label = capitalize(category)
   return (
     <Table.Row>
       <Table.Cell>
