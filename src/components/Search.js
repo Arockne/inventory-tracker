@@ -1,40 +1,39 @@
 import React from 'react'
-import { Input, Search as SearchBar } from 'semantic-ui-react'
+import { Dropdown, Search as SearchBar } from 'semantic-ui-react'
 
 function Search({ inventory, searchByName, setSearchByName, categoryFilter, setCategoryFilter }) {
   function handleSearchField(e) {
-    console.log(e)
     setSearchByName(e.target.value)
   }
 
-  function handleCategoryChange(e) {
-    setCategoryFilter(e.target.value)
+  function handleCategoryChange(e, { value }) {
+    setCategoryFilter(value)
   }
 
-  const categoryOptions = inventory.reduce((a,b) => {
+  const moreOptions = inventory.reduce((a,b) => {
     if (!a.includes(b.category)) {
       a.push(b.category)
     }
     return a;
-  },[]).map(item => <option key={item} value={item}>{item}</option>)
+  },[]).map(item => ({ key:item, value:item, text:item }))
   
   return (
-    <form>
-      <label>Filter By:
-        <select value={categoryFilter} onChange={handleCategoryChange}>
-          <option value="">-- --</option>
-          {
-            categoryOptions
-          }
-        </select>
-      </label>
-    <SearchBar  
-      placeholder="Search By Name"
-      showNoResults={false}
-      value={searchByName}
-      onSearchChange={handleSearchField}
-    />
-    </form>
+    <div className='search'>
+      <SearchBar  
+        placeholder="Search By Name"
+        showNoResults={false}
+        value={searchByName}
+        onSearchChange={handleSearchField}
+      />
+      <Dropdown 
+        clearable 
+        selection
+        placeholder="Filter By" 
+        options={moreOptions} 
+        value={categoryFilter} 
+        onChange={handleCategoryChange}
+      />
+    </div>
   )
 }
 
