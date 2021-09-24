@@ -27,15 +27,17 @@ const unitOptions = [
   { key: 'kg', text:'kg', value:'kg' }
 ]
 
+const emptyFields =  {
+  name: '',
+  category: '',
+  unitMeasurement: 'ea',
+  amount: '',
+  image: '',
+  pricePerUnit: ''
+}
+
 function ItemForm({ onAddItem, inventory }) {
-  const [formData, setFormData] = useState({
-    name: '',
-    category: '',
-    unitMeasurement: 'ea',
-    amount: '',
-    image: '',
-    pricePerUnit: ''
-  })
+  const [formData, setFormData] = useState(emptyFields)
 
   const {name} = useParams()
   const history = useHistory()
@@ -62,15 +64,6 @@ function ItemForm({ onAddItem, inventory }) {
     e.preventDefault();
     if (!formData.category) {
       return;
-    }
-
-    const emptyFields =  {
-      name: '',
-      category: '',
-      unitMeasurement: 'ea',
-      amount: '',
-      image: '',
-      pricePerUnit: ''
     }
 
     formData.name = formData.name.trim().toLowerCase();
