@@ -39,7 +39,7 @@ function Item({ item }) {
         <Card.Header>
           {itemName}
           <Link to={`./edit/${name}`}>
-            <Icon name="write" size="large" color="black"/>
+            <Icon name="write" size="small" color="black"/>
           </Link>
         </Card.Header>
         <Card.Description content={`Category: ${category}`} />
