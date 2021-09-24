@@ -60,9 +60,11 @@ nav {
   justify-content: center;
 }
 
-/********* New page ************/
+/********* Form page ************/
 .item-form {
   display: flex;
-  flex-direction: column;
-  align-items: center
+  justify-content: center;
+  margin: auto;
+  padding: 1rem;
+  width: 35%;
 }
