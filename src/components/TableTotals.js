@@ -1,14 +1,14 @@
 import React from 'react'
 import TableTotal from './TableTotal'
 import { Table } from 'semantic-ui-react'
+import { totalCost } from '../helpers'
 
 function TableTotals({ inventory }) {
   const pricesByCategory = inventory.reduce((a, b) => {
-    const currentItemTotal = (Math.round(((parseFloat(b.pricePerUnit) * parseFloat(b.amount)) + Number.EPSILON) * 100)) / 100;
     if (!a[b.category]) {
-      a[b.category] = currentItemTotal;
+      a[b.category] = totalCost(b);
     } else {
-      a[b.category] += currentItemTotal;
+      a[b.category] += totalCost(b);
     }
     return a;
   }, {})
