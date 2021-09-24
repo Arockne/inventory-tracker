@@ -178,7 +178,15 @@ function ItemForm({ onAddItem, inventory }) {
           onChange={handleFormChange}
           required
         /> 
-        <Form.Field className="submit" control={Button}>Add Item</Form.Field>
+        <Form.Field 
+          control={Button} 
+          className="submit" 
+          color="black" 
+          size="medium"
+          fluid 
+        >
+        {formData.id ? "Edit Item" : "Add Item"}
+        </Form.Field>
       </Form>
     </div>
   )
