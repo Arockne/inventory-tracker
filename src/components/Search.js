@@ -18,21 +18,22 @@ function Search({ inventory, searchByName, setSearchByName, categoryFilter, setC
   },[]).map(item => ({ key:item, value:item, text:item }))
   
   return (
-    <div className='search'>
-      <SearchBar  
-        placeholder="Search By Name"
-        showNoResults={false}
-        value={searchByName}
-        onSearchChange={handleSearchField}
-      />
-      <Dropdown 
-        clearable 
-        selection
-        placeholder="Filter By" 
-        options={moreOptions} 
-        value={categoryFilter} 
-        onChange={handleCategoryChange}
-      />
+    <div className="search-container">
+      <div className="search">
+        <SearchBar  
+          placeholder="Search By Name"
+          showNoResults={false}
+          value={searchByName}
+          onSearchChange={handleSearchField}
+        />
+        <Dropdown 
+          clearable
+          placeholder="Filter By" 
+          options={moreOptions} 
+          value={categoryFilter} 
+          onChange={handleCategoryChange}
+        />
+      </div>
     </div>
   )
 }
