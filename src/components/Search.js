@@ -1,7 +1,9 @@
 import React from 'react'
+import { Input, Search as SearchBar } from 'semantic-ui-react'
 
 function Search({ inventory, searchByName, setSearchByName, categoryFilter, setCategoryFilter }) {
   function handleSearchField(e) {
+    console.log(e)
     setSearchByName(e.target.value)
   }
 
@@ -26,12 +28,12 @@ function Search({ inventory, searchByName, setSearchByName, categoryFilter, setC
           }
         </select>
       </label>
-      <input 
-        type="text"
-        placeholder="Search By Name.."
-        value={searchByName}
-        onChange={handleSearchField}
-      />
+    <SearchBar  
+      placeholder="Search By Name"
+      showNoResults={false}
+      value={searchByName}
+      onSearchChange={handleSearchField}
+    />
     </form>
   )
 }
