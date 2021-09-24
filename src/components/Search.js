@@ -1,5 +1,6 @@
 import React from 'react'
 import { Dropdown, Search as SearchBar } from 'semantic-ui-react'
+import { capitalize} from '../helpers'
 
 function Search({ inventory, searchByName, setSearchByName, categoryFilter, setCategoryFilter }) {
   function handleSearchField(e) {
@@ -15,7 +16,7 @@ function Search({ inventory, searchByName, setSearchByName, categoryFilter, setC
       a.push(b.category)
     }
     return a;
-  },[]).map(item => ({ key:item, value:item, text:item }))
+  },[]).map(item => ({ key:item, value:item, text:capitalize(item) }))
   
   return (
     <div className="search-container">
