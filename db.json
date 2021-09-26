@@ -40,7 +40,7 @@
       "name": "blueberries",
       "category": "produce",
       "unitMeasurement": "lb",
-      "amount": 1,
+      "amount": 3,
       "image": "https://images.unsplash.com/photo-1578412555487-e8344b57be43?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Ymx1ZWJlcnJpZXN8ZW58MHwyfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
       "pricePerUnit": 5,
       "id": 5
@@ -161,6 +161,15 @@
       "image": "https://images.unsplash.com/photo-1587049332298-1c42e83937a7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=880&q=80",
       "pricePerUnit": 0.5,
       "id": 18
+    },
+    {
+      "name": "onion",
+      "category": "produce",
+      "unitMeasurement": "lb",
+      "amount": 5,
+      "image": "https://images.unsplash.com/photo-1587049633312-d628ae50a8ae?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=880&q=80",
+      "pricePerUnit": 2,
+      "id": 19
     }
   ]
 }
