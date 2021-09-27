@@ -10,6 +10,7 @@ function TableTotals({ inventory }) {
     } else {
       a[b.category] += totalCost(b);
     }
+    debugger;
     return a;
   }, {})
   
@@ -29,7 +30,7 @@ function TableTotals({ inventory }) {
         {
           Object.entries(pricesByCategory).map(([cat, total]) => <TableTotal key={cat} category={cat} total={total}/>)
         }
-        <TableTotal category={'Total Coast Of Goods'} total={totalSum}/>
+        <TableTotal category={'Total Cost Of Goods'} total={totalSum}/>
       </Table.Body>
     </Table>
   )
