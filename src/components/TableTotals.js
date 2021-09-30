@@ -15,7 +15,7 @@ function TableTotals({ inventory }) {
   }, {})
   
   const totalSum = Object.values(pricesByCategory).reduce((a,b) => {
-    return Math.round((a + b + Number.EPSILON) * 100) / 100
+    return Math.round((a + b) * 100) / 100
   }, 0)
 
   return (
