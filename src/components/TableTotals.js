@@ -10,7 +10,6 @@ function TableTotals({ inventory }) {
     } else {
       a[b.category] += totalCost(b);
     }
-    debugger;
     return a;
   }, {})
   
